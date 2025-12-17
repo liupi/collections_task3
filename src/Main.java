@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
+import java.util.Set;
 import java.util.TreeSet;
 
 public class Main {
@@ -17,7 +18,7 @@ public class Main {
         employees.forEach(System.out::println);
     }
 
-    private static TreeSet<String> readFile() {
+    private static Set<String> readFile() {
         try (BufferedReader br = new BufferedReader(new FileReader("resources/employees.txt"))) {
             var list = br.lines().toList();
             System.out.println("Size of list: " + list.size());
