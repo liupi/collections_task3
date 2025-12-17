@@ -15,8 +15,6 @@ public class Main {
                     return new Employee(arr[0], arr[1]);
                 }).toList();
 
-        System.out.println("Size of collection: " + employees.size());
-
         System.out.println("\nPrint employees data in alphabetical order:");
         employees.forEach(System.out::println);
     }
@@ -24,6 +22,7 @@ public class Main {
     private static TreeSet<String> readFile() {
         try (BufferedReader br = new BufferedReader(new FileReader("resources/employees.txt"))) {
             var list = br.lines().toList();
+            System.out.println("Size of list: " + list.size());
             TreeSet<String> ts = new TreeSet<>(list);
             System.out.println("Size of TreeSet: " + ts.size());
             return ts;
